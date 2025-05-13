@@ -1,0 +1,163 @@
+/* css/style.css */
+
+:root {
+  --light-bg: #f9f9f9;
+  --light-text: #222;
+  --dark-bg: #1e1e1e;
+  --dark-text: #f1f1f1;
+  --accent: #00cc69;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  transition: all 0.3s ease;
+}
+
+body.dark {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+header {
+  background-color: var(--accent);
+  color: white;
+  padding: 1rem;
+  z-index: 10;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0.5rem;
+  font-weight: bold;
+}
+
+nav button {
+  background: white;
+  color: var(--accent);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  background-image: url('pic.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.hero-section h1,
+.hero-section p {
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out both;
+}
+
+.hero-section h1 {
+  animation-delay: 0.3s;
+}
+
+.hero-section p {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+input[type="text"], input[type="email"], textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#postFeed, #alumniList {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.post, .alumni-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+body.dark .post, body.dark .alumni-card {
+  background: #2c2c2c;
+  color: var(--dark-text);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--accent);
+  color: white;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+}

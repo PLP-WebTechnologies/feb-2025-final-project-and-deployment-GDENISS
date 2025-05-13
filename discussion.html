@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLP Alumni - Discussion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="alumni.html">Alumni</a>
+      <a href="discussion.html">Discussion</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+      <button id="themeToggle">Toggle Theme</button>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h1>Discussion Board</h1>
+      <form id="postForm">
+        <input type="text" id="postTitle" placeholder="Title" required>
+        <textarea id="postContent" placeholder="Share your thoughts..." required></textarea>
+        <button type="submit">Post</button>
+      </form>
+      <div id="postFeed"></div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Power Learn Project Alumni</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
